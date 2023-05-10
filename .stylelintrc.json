@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "stylelint-config-recommended"
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "ignoreFiles": [
+    "**/*.{js,json}"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "color-hex-case": "lower",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "blockless-after-same-name-blockless"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ]
+  }
+}

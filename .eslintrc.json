@@ -1,0 +1,47 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "jquery": true
+    },
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
+    "plugins": [
+        "import",
+        "prettier"
+    ],
+    "rules": {
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "always"
+            }
+        ],
+        "indent": "off",
+        "quotes": "off",
+        "no-console": "error",
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": false,
+                "tabWidth": 2
+            }
+        ],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "no-shadow": "off"
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+          "experimentalObjectRestSpread": true
+        }
+       
+    }
+}

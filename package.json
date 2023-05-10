@@ -1,0 +1,31 @@
+{
+  "name": "memory-cards",
+  "version": "1.0.0",
+  "description": "memory-cards",
+  "type": "module",
+  "scripts": {
+    "dev": "http-server -o index.html",
+    "lint:fix": "eslint --ext .js --fix .",
+    "stylelint:fix": "stylelint --fix **/*.css",
+    "prettier:fix": "prettier --write **/*.html",
+    "format": "npm run stylelint:fix && npm run lint:fix && npm run prettier:fix",
+    "prepare": "husky install"
+  },
+  "author": "Kate",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "stylelint": "^15.6.1",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-prettier": "^2.0.0"
+  }
+}
