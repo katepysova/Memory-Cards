@@ -9,21 +9,27 @@
   text-transform: capitalize;
 }
 
-.btn:hover {
+.btn:disabled {
+  cursor: not-allowed;
+  color: var(--color-grey);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn:not(:disabled):hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow);
 }
 
-.btn:active {
+.btn:not(:disabled):active {
   transform: translateY(1px);
 }
 
-.btn--primary {
+.btn--primary:not(:disabled) {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
 
-.btn--secondary {
+.btn--secondary:not(:disabled) {
   color: var(--color-white);
   background-color: var(--color-secondary);
 }

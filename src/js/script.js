@@ -1,33 +1,39 @@
 import { checkTextarea } from "./form-validation.js";
+import LocalStorage from "./local-storage.js";
 
 const cardsContainer = document.querySelector(".cards");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const currentText = document.querySelector(".current-card");
-const open = document.querySelector(".open");
-const close = document.querySelector(".close");
+const openBtn = document.querySelector(".open");
+const clearBtn = document.querySelector(".clear");
+const closeBtn = document.querySelector(".close");
 const modal = document.querySelector(".modal");
 const form = document.querySelector(".form");
 
 const question = document.querySelector("#question");
 const answer = document.querySelector("#answer");
 
+const LS_MEMORY_CARDS_KEY = "memory_cards";
+
 let currentActiveCard = 0;
 let cards = [];
-
-const cardsData = [
-  {
-    question: "Q1",
-    answer: "A1",
-  },
-  {
-    question: "2",
-    answer: "A21",
-  },
-];
+let cardsData = LocalStorage.getItem(LS_MEMORY_CARDS_KEY) || [];
 
 const updateCurrentText = () => {
-  currentText.innerText = `${currentActiveCard + 1}/${cards.length}`;
+  if (cards.length > 0) {
+    currentText.innerText = `${currentActiveCard + 1}/${cards.length}`;
+  } else {
+    currentText.innerText = "";
+  }
+};
+
+const emptyState = (message = "No items found") => {
+  return `
+    <div class="empty-state">
+      <p class="empty-state__message">${message}<p>
+    </div>
+  `;
 };
 
 const createCard = (data, index) => {
@@ -61,13 +67,19 @@ const createCards = () => {
     const card = createCard(data, index);
     cards.push(card);
     cardsContainer.appendChild(card);
-    updateCurrentText();
   });
+  updateCurrentText();
   prevBtn.setAttribute("disabled", true);
-  if (cardsData.length === 1) {
+  if (cards.length === 0) {
+    clearBtn.setAttribute("disabled", true);
+    nextBtn.setAttribute("disabled", true);
+    nextBtn.setAttribute("disabled", true);
+    cardsContainer.innerHTML = emptyState();
+  } else if (cardsData.length === 1) {
+    clearBtn.removeAttribute("disabled");
     nextBtn.setAttribute("disabled", true);
   } else {
-    nextBtn.removeAttribute("disabled", true);
+    nextBtn.removeAttribute("disabled");
   }
 };
 
@@ -105,12 +117,19 @@ prevBtn.addEventListener("click", () => {
   updateCurrentText();
 });
 
-open.addEventListener("click", () => {
+openBtn.addEventListener("click", () => {
   modal.classList.add("show");
 });
 
-close.addEventListener("click", () => {
+closeBtn.addEventListener("click", () => {
   modal.classList.remove("show");
+});
+
+clearBtn.addEventListener("click", () => {
+  cardsData = [];
+  LocalStorage.removeItem(LS_MEMORY_CARDS_KEY);
+  updateCurrentText();
+  createCards();
 });
 
 form.addEventListener("submit", (event) => {
@@ -119,18 +138,20 @@ form.addEventListener("submit", (event) => {
   const isAnswerValid = checkTextarea(answer);
 
   if (isQuestionValid && isAnswerValid) {
-    const cardData = {
+    const newCardData = {
       question: question.value,
       answer: answer.value,
     };
-    cardsData.push(cardData);
+    cardsData.push(newCardData);
+    const lsCards = LocalStorage.getItem(LS_MEMORY_CARDS_KEY) || [];
+    LocalStorage.setItem(LS_MEMORY_CARDS_KEY, [...lsCards, newCardData]);
     createCards();
-    close.click();
+    closeBtn.click();
   }
 });
 
 window.addEventListener("resize", () => {
-  close.click();
+  closeBtn.click();
 });
 
 createCards();

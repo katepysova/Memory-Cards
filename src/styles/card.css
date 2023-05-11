@@ -15,6 +15,8 @@
   opacity: 0;
   transition: all 0.4s ease;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .card__content {
@@ -23,7 +25,6 @@
   position: relative;
   transition: all 0.4s ease;
   transform-style: preserve-3d;
-  border-radius: 6px;
 }
 
 .card.show-answer .card__content {
@@ -48,7 +49,6 @@
 
 .card__front,
 .card__back {
-  border-radius: 6px;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
