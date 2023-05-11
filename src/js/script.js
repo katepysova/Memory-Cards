@@ -160,6 +160,7 @@ clearBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const isQuestionValid = checkTextarea(question);
   const isAnswerValid = checkTextarea(answer);
 
@@ -175,6 +176,10 @@ form.addEventListener("submit", (event) => {
     question.value = "";
     answer.value = "";
   }
+});
+
+window.addEventListener("resize", () => {
+  closeBtn.click();
 });
 
 createCards();

@@ -1,3 +1,12 @@
+const textareas = document.querySelectorAll("textarea");
+
+textareas.forEach((textarea) => {
+  textarea.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+});
+
 export const showError = (input, message) => {
   const formControl = input.parentElement;
   const error = formControl.querySelector(".form__field-error");
