@@ -179,7 +179,6 @@ form.addEventListener("submit", (event) => {
 });
 
 window.addEventListener("resize", () => {
-  closeBtn.click();
+  modal.classList.remove("show");
 });
-
 createCards();
