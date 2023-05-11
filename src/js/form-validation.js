@@ -3,7 +3,6 @@ const textareas = document.querySelectorAll("textarea");
 textareas.forEach((textarea) => {
   textarea.addEventListener("touchstart", (event) => {
     event.stopPropagation();
-    event.preventDefault();
   });
 });
 
