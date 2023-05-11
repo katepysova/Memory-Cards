@@ -74,3 +74,17 @@
   top: 14px;
   right: 14px;
 }
+
+.card__delete-btn.btn-small {
+  color: var(--color-red);
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.card__delete-btn.btn-small svg {
+  width: 36px;
+  height: 36px;
+}

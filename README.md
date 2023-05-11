@@ -1,6 +1,6 @@
-# Simple Form Validator
+# Memory Cards
 
-Simple Sign Up form made with Pure JS, CSS and HTML. [Demo](https://katepysova.github.io/Form-Validation/).
+Memory Cards App made with Pure JS, CSS and HTML. [Demo](https://katepysova.github.io/Form-Validation/).
 
 ## Installation
 
@@ -11,6 +11,10 @@ Simple Sign Up form made with Pure JS, CSS and HTML. [Demo](https://katepysova.g
 2. Change your current directory to this project directory.
 
 3. `npm install`
+
+4. `npm run prepare` - to install git pre-commit hook. Does not work not in a git repository.
+
+5. `git add .husky/pre-commit` - to add git pre-commit hook.
 
 ## How to run
 
