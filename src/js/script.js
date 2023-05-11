@@ -179,6 +179,11 @@ form.addEventListener("submit", (event) => {
 });
 
 window.addEventListener("resize", () => {
-  modal.classList.remove("show");
+  /* if (modal.classList.contains("show")) {
+    const windowHeight = window.innerHeight;
+    const modalHeight = modal.offsetHeight;
+    const modalTop = (windowHeight - modalHeight) / 2;
+    modal.style.top = `${modalTop}px`;
+  } */
 });
 createCards();
