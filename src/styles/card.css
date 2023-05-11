@@ -61,6 +61,11 @@
   background-color: var(--color-white);
 }
 
+.card__front p,
+.card__back  p{
+  padding: 24px;
+}
+
 .card__back {
   transform: rotateX(180deg);
 }

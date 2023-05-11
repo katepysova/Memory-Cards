@@ -24,7 +24,7 @@ export const getFieldName = (input) => {
   return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
-export const checkTextarea = (textarea, min = 2, max = 100) => {
+export const checkTextarea = (textarea, min = 2, max = 400) => {
   let isValid = false;
   const textareaValue = textarea.value;
   if (isEmpty(textareaValue)) {
