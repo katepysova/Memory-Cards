@@ -2,8 +2,8 @@ const textareas = document.querySelectorAll("textarea");
 
 textareas.forEach((textarea) => {
   textarea.addEventListener("touchstart", (event) => {
-    event.preventDefault();
     event.stopPropagation();
+    event.preventDefault();
   });
 });
 
