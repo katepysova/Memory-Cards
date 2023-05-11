@@ -1,0 +1,76 @@
+.cards {
+  perspective: 1000px;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  border-radius: 6px;
+}
+
+.card.show-answer .card__content {
+  transform: rotateX(180deg);
+}
+
+.card.active {
+  opacity: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s ease;
+  transform: translateX(0) rotateY(0);
+}
+
+.card.left {
+  transform: translateX(-50%) rotateY(10deg);
+}
+
+.card.right {
+  transform: translateX(50%) rotateY(-10deg);
+}
+
+.card__front,
+.card__back {
+  border-radius: 6px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.card__back {
+  transform: rotateX(180deg);
+}
+
+.card__front::before,
+.card__back::before {
+  content: url("../icons/svg/rotate.svg");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}

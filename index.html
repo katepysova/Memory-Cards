@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="src/images/favicon.ico" />
-        <title>Memory Cards</title>
-        <link rel="stylesheet" href="src/style.css" />
-    </head>
-    <body>
-        <script src="src/script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="src/images/favicon.ico" />
+    <title>Memory Cards</title>
+    <link rel="stylesheet" href="src/styles/base.css" />
+    <link rel="stylesheet" href="src/styles/button.css" />
+    <link rel="stylesheet" href="src/styles/card.css" />
+    <link rel="stylesheet" href="src/styles/modal.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="heading-primary">Memory Cards</h1>
+      <div class="actions">
+        <button class="btn btn--secondary open">Add new card</button>
+        <button class="btn btn--primary">Clear Cards</button>
+      </div>
+      <div class="cards"></div>
+      <div class="controls">
+        <button class="btn-small prev">
+          <svg>
+            <use href="src/icons/sprite.svg#arrow-left"></use>
+          </svg>
+        </button>
+        <p class="current-card"></p>
+        <button class="btn-small next">
+          <svg>
+            <use href="src/icons/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal">
+        <div class="modal__content">
+          <button class="modal__close btn-small close">
+            <svg>
+              <use href="src/icons/sprite.svg#cross"></use>
+            </svg>
+          </button>
+
+          <h2 class="heading-secondary u-center">Add new card</h2>
+
+          <form class="form">
+            <div class="form__field">
+              <textarea
+                class="form__field-input form__textarea"
+                name="question"
+                id="question"
+                rows="4"
+                placeholder="question"
+              ></textarea>
+              <label class="form__field-label" for="question">Question</label>
+              <small class="form__field-error">ffff</small>
+            </div>
+
+            <div class="form__field">
+              <textarea
+                class="form__field-input form__textarea"
+                name="answer"
+                id="answer"
+                rows="4"
+                placeholder="answer"
+              ></textarea>
+              <label class="form__field-label" for="answer">Answer</label>
+              <small class="form__field-error">ll</small>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Add Card</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="src/js/local-storage.js" type="module"></script>
+    <script src="src/js/form-validation.js" type="module"></script>
+    <script src="src/js/script.js" type="module"></script>
+  </body>
 </html>

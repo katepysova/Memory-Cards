@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "http-server -o index.html",
-    "lint:fix": "eslint --ext .js --fix .",
+    "lint:fix": "eslint --ext .js --ext .json --fix .",
     "stylelint:fix": "stylelint --fix **/*.css",
     "prettier:fix": "prettier --write **/*.html",
     "format": "npm run stylelint:fix && npm run lint:fix && npm run prettier:fix",
@@ -20,6 +20,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-json-files": "^2.2.0",
     "eslint-plugin-prettier": "^4.2.1",
     "http-server": "^14.1.1",
     "husky": "^8.0.3",

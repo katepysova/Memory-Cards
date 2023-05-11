@@ -1,5 +1,5 @@
 {
-    "env": {
+"env": {
         "es6": true,
         "browser": true,
         "node": true,
@@ -11,6 +11,7 @@
     ],
     "plugins": [
         "import",
+        "json-files",
         "prettier"
     ],
     "rules": {
@@ -24,6 +25,7 @@
         "indent": "off",
         "quotes": "off",
         "no-console": "error",
+        "func-names":"off",
         "prettier/prettier": [
             "error",
             {
