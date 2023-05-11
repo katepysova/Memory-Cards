@@ -1,7 +1,7 @@
 const textareas = document.querySelectorAll("textarea");
 
 textareas.forEach((textarea) => {
-  textarea.addEventListener("click", (event) => {
+  textarea.addEventListener("focus", (event) => {
     event.preventDefault();
     event.stopPropagation();
   });
