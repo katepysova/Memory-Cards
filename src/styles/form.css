@@ -1,0 +1,74 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form__field {
+  position: relative;
+  padding: 24px 0 18px;
+}
+
+.form__textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: var(--animation);
+}
+
+.form__textarea:focus {
+  outline: 0;
+  box-shadow: var(--shadow);
+}
+
+.form__field-label {
+  display: block;
+  position: absolute;
+  top: 38px;
+  left: 12px;
+  color: var(--color-grey);
+  z-index: 2;
+  transition: var(--animation);
+}
+
+.form__field-input::placeholder {
+  visibility: hidden;
+}
+
+.form__field-input:not(:placeholder-shown) + .form__field-label,
+.form__field-input:focus + .form__field-label {
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.form__field-error {
+  color: var(--color-red);
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: var(--animation);
+}
+
+.form__field.error .form__field-error {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form .btn {
+  margin-top: 14px;
+  align-self: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .form .btn {
+    align-self: stretch;
+  }
+}
