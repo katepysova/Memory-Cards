@@ -177,13 +177,4 @@ form.addEventListener("submit", (event) => {
     answer.value = "";
   }
 });
-
-window.addEventListener("resize", () => {
-  /* if (modal.classList.contains("show")) {
-    const windowHeight = window.innerHeight;
-    const modalHeight = modal.offsetHeight;
-    const modalTop = (windowHeight - modalHeight) / 2;
-    modal.style.top = `${modalTop}px`;
-  } */
-});
 createCards();
