@@ -1,12 +1,12 @@
 # Memory Cards
 
-Memory Cards App made with Pure JS, CSS and HTML. [Demo](https://katepysova.github.io/Form-Validation/).
+Memory Cards App made with Pure JS, CSS and HTML. [Demo](https://katepysova.github.io/Memory-Cards/).
 
 ## Installation
 
 1. Clone this repo or downloand zip:
 
-   `git@github.com:katepysova/Form-Validation.git`
+   `git@github.com:katepysova/Memory-Cards.git`
 
 2. Change your current directory to this project directory.
 
