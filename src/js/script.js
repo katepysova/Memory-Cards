@@ -177,8 +177,4 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-window.addEventListener("resize", () => {
-  closeBtn.click();
-});
-
 createCards();
