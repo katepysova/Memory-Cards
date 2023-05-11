@@ -177,4 +177,5 @@ form.addEventListener("submit", (event) => {
     answer.value = "";
   }
 });
+
 createCards();
